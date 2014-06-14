@@ -73,7 +73,7 @@ Directory structure of tests
     tests/
         js/
             unit/
-                fixtures    containt fixtures
+                fixtures    contains fixtures
                 example.js  example of test
             test_helper.js  javascript test helper
             test_helper.css css test helper
