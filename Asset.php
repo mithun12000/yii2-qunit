@@ -10,7 +10,7 @@ class Asset extends AssetBundle
     /**
      * @inheritdoc
      */
-    public $sourcePath = '@app/modules/qunit/assets';
+    public $sourcePath = 'dizews/qunit/assets';
     /**
      * @inheritdoc
      */

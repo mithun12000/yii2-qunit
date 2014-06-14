@@ -25,7 +25,7 @@ class UnitAsset extends AssetBundle
      * @inheritdoc
      */
     public $depends = [
-        'app\modules\qunit\Asset'
+        'dizews\qunit\Asset'
     ];
 
     public function init()
