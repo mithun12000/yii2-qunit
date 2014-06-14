@@ -19,17 +19,23 @@ class Installer extends LibraryInstaller
     {
         $options = $event->getComposer()->getPackage()->getExtra();
         if (!isset($options[self::EXTRA_SKELETON], $options[self::EXTRA_SKELETON]['path'])) {
-            $path = 'tests';
+            $path = 'tests/js';
         } else {
             $path = $options[self::EXTRA_SKELETON]['path'];
         }
+        $path = getcwd() . DIRECTORY_SEPARATOR . $path;
 
-        echo "Setting init tests skeleton: $path ...";
-        if (is_dir($path)) {
-            FileHelper::copyDirectory(self::getSourceSkeletonPath(), $path);
-            echo "done\n";
+
+        echo "Setting init tests skeleton: {$path} ...\n";
+        if (!file_exists($path)) {
+            if (FileHelper::createDirectory($path)) {
+                FileHelper::copyDirectory(self::getSourceSkeletonPath(), $path);
+                echo "done\n";
+            } else {
+                echo "The directory was not found: " . $path ."\n";
+            }
         } else {
-            echo "The directory was not found: " . getcwd() . DIRECTORY_SEPARATOR . $path;
+            echo "{$path} directory is exists\n";
 
             return;
         }
@@ -39,4 +45,5 @@ class Installer extends LibraryInstaller
     {
         return  __DIR__ . DIRECTORY_SEPARATOR .'installer'. DIRECTORY_SEPARATOR . self::EXTRA_SKELETON;
     }
+
 }
