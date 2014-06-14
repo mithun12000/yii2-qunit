@@ -8,7 +8,13 @@ Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
-Add
+Either run
+
+```
+php composer.phar require --dev --prefer-dist dizews/yii2-qunit "*"
+```
+
+or add
 
 ```
 "dizews/yii2-qunit": "*"
@@ -16,7 +22,7 @@ Add
 
 to the require-dev section of your composer.json.
 
-and add
+finally add
 
 ```
 "post-install-cmd": [
