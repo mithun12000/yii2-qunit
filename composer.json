@@ -21,7 +21,7 @@
         "psr-4": { "dizews\\qunit\\": "" }
     },
     "scripts": {
-        "post-package-install": [
+        "post-install-cmd": [
             "dizews\\qunit\\Installer::initTestsSkeleton"
         ]
     },

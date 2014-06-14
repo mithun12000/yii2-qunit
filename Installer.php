@@ -4,6 +4,7 @@ namespace dizews\qunit;
 
 use dizews\qunit\helpers\FileHelper;
 use Composer\Installer\LibraryInstaller;
+use Composer\Script\CommandEvent;
 
 
 class Installer extends LibraryInstaller
@@ -17,8 +18,11 @@ class Installer extends LibraryInstaller
     public static function initTestsSkeleton($event)
     {
         $options = $event->getComposer()->getPackage()->getExtra();
-
-        $path = $options[self::EXTRA_SKELETON]['path'];
+        if (!isset($options[self::EXTRA_SKELETON], $options[self::EXTRA_SKELETON]['path'])) {
+            $path = 'tests';
+        } else {
+            $path = $options[self::EXTRA_SKELETON]['path'];
+        }
 
         echo "Setting init tests skeleton: $path ...";
         if (is_dir($path)) {
@@ -33,6 +37,6 @@ class Installer extends LibraryInstaller
 
     private static function getSourceSkeletonPath()
     {
-        getcwd() . DIRECTORY_SEPARATOR .'installer'. DIRECTORY_SEPARATOR . self::EXTRA_SKELETON;
+        return  __DIR__ . DIRECTORY_SEPARATOR .'installer'. DIRECTORY_SEPARATOR . self::EXTRA_SKELETON;
     }
 }
