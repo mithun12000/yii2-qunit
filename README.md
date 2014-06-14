@@ -27,7 +27,7 @@ and add
 to the scripts section of your composer.json and run
 
 ```
-php composer.phar install && php composer.phar run-script post-install-cmd
+php composer.phar install
 ```
 
 
@@ -71,4 +71,3 @@ Directory structure of tests
                 example.js  example of test
             test_helper.js  javascript test helper
             test_helper.css css test helper
-            
