@@ -47,7 +47,8 @@ return [
     //....
     'modules' => [
         'qunit' => [
-            'class' => 'dizews\qunit\Module'
+            'class' => 'dizews\qunit\Module',
+            //'runner' => ['template' => '@app/views/js-tests-runner/index'] //your own tests runner
         ],
     ],
 ];
@@ -77,3 +78,4 @@ Directory structure of tests
                 example.js  example of test
             test_helper.js  javascript test helper
             test_helper.css css test helper
+

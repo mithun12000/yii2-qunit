@@ -10,6 +10,10 @@ class Module extends \yii\base\Module implements BootstrapInterface
 {
     public $defaultRoute = 'runner';
 
+    public $runner = [
+        'template' => 'index'
+    ];
+
     /**
      * @inheritdoc
      */
