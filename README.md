@@ -79,3 +79,6 @@ Directory structure of tests
             test_helper.js  javascript test helper
             test_helper.css css test helper
 
+Fixtures
+---------
+All fixtures decorate by ```div``` with ```id``` which has a name ```fixture-``` + filename.
