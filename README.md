@@ -22,20 +22,6 @@ or add
 
 to the require-dev section of your composer.json.
 
-finally add
-
-```
-"post-install-cmd": [
-    "dizews\\qunit\\Installer::initTestsSkeleton"
-]
-```
-
-to the scripts section of your composer.json and run
-
-```
-php composer.phar install
-```
-
 
 General Usage
 -------------
